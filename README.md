@@ -9,7 +9,7 @@ next update => multi currency
 Then add the following code to your ```.i3/config``` :
 
     bar {
-	status_command exec ~/.i3/i3coins/i3coins.sh
+	status_command exec ~/.i3/i3coins/i3coins.sh -c eur -d 1 #Currency and Days (Days may be 1|7|14|28|...|365)
 	position bottom
         tray_output none
         workspace_buttons no

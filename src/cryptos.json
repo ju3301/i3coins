@@ -1,0 +1,14 @@
+[
+    {
+        "name": "bitcoin",
+        "label": "₿"
+    },
+    {
+        "name": "dogecoin",
+        "label": "dgc"
+    },
+    {
+        "name": "tron",
+        "label": "trx"
+    }
+]

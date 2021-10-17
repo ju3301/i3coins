@@ -1,0 +1,10 @@
+[
+    {
+        "name": "eur",
+        "symbol": "€"
+    },
+    {
+        "name": "usd",
+        "symbol": "$"
+    }
+]

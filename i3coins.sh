@@ -1,7 +1,18 @@
 #!/bin/bash
+#Get arguments
+while getopts n:c:d: flag
+do
+    case "${flag}" in
+        n) name=${OPTARG};;
+        c) currency=${OPTARG};;
+        d) days=${OPTARG};;
+    esac
+done
+
 # Begin the endless array.
 echo '{"version": 1}'
 echo '['
+
 # Now send blocks with information forever:
 while :;
 do

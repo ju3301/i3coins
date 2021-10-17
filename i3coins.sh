@@ -1,13 +1,22 @@
 #!/bin/bash
-#Get arguments
-while getopts n:c:d: flag
+# Get arguments
+while getopts c:d: flag
 do
     case "${flag}" in
-        n) name=${OPTARG};;
         c) currency=${OPTARG};;
         d) days=${OPTARG};;
     esac
 done
+
+# Get symbol currency
+symbol=`cat ~/.i3/i3coins/src/symbols.json | jq -r '.[] | select(.name=="'$currency'") | .symbol'`
+
+if [ -z "$symbol" ]
+then
+    symbol_arg="-symbol $currency"
+else 
+    symbol_arg="-symbol $symbol"
+fi
 
 # Begin the endless array.
 echo '{"version": 1}'
@@ -16,13 +25,8 @@ echo '['
 # Now send blocks with information forever:
 while :;
 do
-    #add new var for new crypto and add them to the array
-    bitcoin=`/usr/bin/python ~/.i3/i3coins/i3status-coins.py -name bitcoin -currency eur -days 1 -label ₿`
-    tron=`/usr/bin/python ~/.i3/i3coins/i3status-coins.py -name tron -currency eur -days 1 -label TRX`
-    doge=`/usr/bin/python ~/.i3/i3coins/i3status-coins.py -name dogecoin -currency eur -days 1 -label DGC`
-
-    #add your new crypto in arr
-    arr=($bitcoin, $tron, $doge)
-    echo '['${arr[*]}'],'
+    cmd=`/usr/bin/python ~/.i3/i3coins/i3status-coins.py -currency $currency -days $days $symbol_arg | sed -e 's/, /,/g' -e 's/": "/":"/g'`
+    #echo "/usr/bin/python ~/.i3/i3coins/i3status-coins.py -currency $currency -days $days $symbol_arg | sed -e 's/, /,/g' -e 's/": "/":"/g'"
+    echo -e "$cmd,"
     sleep 30
 done

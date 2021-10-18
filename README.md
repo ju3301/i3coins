@@ -7,10 +7,6 @@ Custom bar for i3 to get crypto prices
 - python
 - jq
 
-## Next update :
-    
-- Add and Remove symbol for currency which not have one
-
 ## Installation :
 
     git clone https://github.com/ju3301/i3coins.git ~/.i3/i3coins

@@ -58,11 +58,11 @@ elif [[ $add_crypto_arg == true && $remove_crypto_arg != true && $currency_arg !
 then
     echo "Add a crypto"
     read -p 'Name of crypto to add: ' crypto_name
-    exist=`cat src/cryptos.json | jq '.[] | select(.name=="'$crypto_name'")'`
+    exist=`cat ~/.i3/i3coins/src/cryptos.json | jq '.[] | select(.name=="'$crypto_name'")'`
     if [ -z "$exist" ]
     then
         read -p 'Symbol of crypto : ' crypto_symbol
-        echo -e `cat ~/.i3/i3coins/src/cryptos.json | jq '. += [{"name":"'$crypto_name'","label":"'$crypto_symbol'"}]'` > src/cryptos.json
+        echo -e `cat ~/.i3/i3coins/src/cryptos.json | jq '. += [{"name":"'$crypto_name'","label":"'$crypto_symbol'"}]'` > ~/.i3/i3coins/src/cryptos.json
         echo $crypto_name' added to json file'
     else
         echo $crypto_name' already exist in json file'
@@ -71,33 +71,33 @@ elif [[ $add_crypto_arg != true && $remove_crypto_arg == true && $currency_arg !
 then
     echo "Remove a crypto"
     read -p 'Name of crypto to remove : ' crypto_name
-    exist=`cat src/cryptos.json | jq '.[] | select(.name=="'$crypto_name'")'`
+    exist=`cat ~/.i3/i3coins/src/cryptos.json | jq '.[] | select(.name=="'$crypto_name'")'`
     if [ -z "$exist" ]
     then
         echo $crypto_name" cant be removed from json file because not exist"
     else
         echo "Removing $crypto_name"
-        echo -e `cat ~/.i3/i3coins/src/cryptos.json | jq 'del(.[] | select(.name=="'$crypto_name'"))'` > src/cryptos.json
+        echo -e `cat ~/.i3/i3coins/src/cryptos.json | jq 'del(.[] | select(.name=="'$crypto_name'"))'` > ~/.i3/i3coins/src/cryptos.json
         echo "$crypto_name was removed from json file"
     fi
 elif [[ $add_crypto_arg != true && $remove_crypto_arg != true && $currency_arg != true && $days_arg != true && $add_symbol_arg == true ]]
 then
     echo 'Add symbol to currency'
     read -p "Which currency you'de like update : " currency_name
-    exist=`cat src/symbols.json | jq '.[] | select(.name=="'$currency_name'")'`
+    exist=`cat ~/.i3/i3coins/src/symbols.json | jq '.[] | select(.name=="'$currency_name'")'`
     if [ -z "$exist" ]
     then
-        echo 'Currency is not avaible, please check src/symbols.json for aivable currency'
+        echo 'Currency is not avaible, please check ~/.i3/i3coins/src/symbols.json for aivable currency'
     else
     read -p "What's symbol to associate with $currency_name : " currency_symbol
-    echo -e `cat ~/.i3/i3coins/src/symbols.json | jq '(.[] | select(.name=="'$currency_name'") | .symbol) |= "'$currency_symbol'"'` > src/symbols.json
+    echo -e `cat ~/.i3/i3coins/src/symbols.json | jq '(.[] | select(.name=="'$currency_name'") | .symbol) |= "'$currency_symbol'"'` > ~/.i3/i3coins/src/symbols.json
     echo "$currency_name was updated"
     fi
 else
     echo "Usage : "
-    echo "get crypto informations   ./i3coins.sh -c eur -d 1"
-    echo "add crypto to list        ./i3coins.sh -a"
-    echo "remove crypto to list     ./i3coins.sh -r"
-    echo "add symbol to currency     ./i3coins.sh -s"
+    echo "get crypto informations   ~/.i3/i3coins/i3coins.sh -c eur -d 1"
+    echo "add crypto to list        ~/.i3/i3coins/i3coins.sh -a"
+    echo "remove crypto to list     ~/.i3/i3coins/i3coins.sh -r"
+    echo "add symbol to currency     ~/.i3/i3coins/i3coins.sh -s"
 fi
 

@@ -6,14 +6,14 @@ import os
 
 # Parse arguments
 parser = argparse.ArgumentParser(description='get crypto currency value')
-parser.add_argument('-currency', help='names of currency ex: eur, usd')
-parser.add_argument('-days', help='number of days for calc of evolution percentage aivable: 1|7|14|...|365')
+parser.add_argument('-c', help='names of currency ex: eur, usd')
+parser.add_argument('-d', help='number of days for calc of evolution percentage aivable: 1|7|14|...|365')
 parser.add_argument('-symbol', help='symbol to use ex: €, $')
 args = parser.parse_args()
 
 # Get arguments and crypto list
-currency = args.currency
-days = args.days
+currency = args.c
+days = args.d
 cryptos = open(os.path.expanduser('~') + '/.i3/i3coins/src/cryptos.json')
 cryptos_names = json.load(cryptos)
 symbol = args.symbol
@@ -33,21 +33,19 @@ def get_token_evolution(name, currency, days, label):
         last_tab = result[len(result) - 1]
         first_value = first_tab[2]
         last_value = last_tab[2]
-        values = [first_value] + [last_value]
         evolution_calc = ((last_value - first_value) / first_value) * 100
         
         # Format percentage value and result in order to always show + on positive result
         evolution = "%+.3f" % evolution_calc
         
         # Color of result and format currency value
+        return_array[1] = f' {last_value:.2f}' + symbol + ' ' + evolution + '%'
         if evolution_calc < 0 :
-            return_array[1] = f' {last_value:.2f}' + symbol + ' ' + evolution + '%'
             return_array[2] = '#D52941'
-            return return_array
         else:
-            return_array[1] = f' {last_value:.2f}' + symbol + ' ' + evolution + '%'
             return_array[2] = '#35FF69'
-            return return_array
+        return return_array
+
     # On wrong response
     else: 
         return "err"

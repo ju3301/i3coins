@@ -2,24 +2,23 @@
 
 Custom bar for i3 to get crypto prices
 
-## required :
+## Required :
 
 - python
 - jq
 
-## next update:
+## Next update :
     
-- Add and Remove command for cryptos.json
-- Add and Remobe command for symbols.json
+- Add and Remove symbol for currency which not have one
 
-## Installation
+## Installation :
 
     git clone https://github.com/ju3301/i3coins.git ~/.i3/i3coins
 
 Then add the following code to your `.i3/config`, the script `i3coins.sh` require `-c currency` and `-d days`:
 
     bar {
-	status_command exec ~/.i3/i3coins/i3coins.sh -c eur -d 1 #Currency and Days (Days may be 1|7|14|28|...|365)
+	status_command exec ~/.i3/i3coins/i3coins.sh -c eur -d 1 #Currency and Days (Days should be 1|7|14|28|...|365)
 	position bottom
         tray_output none
         workspace_buttons no
@@ -28,3 +27,9 @@ Then add the following code to your `.i3/config`, the script `i3coins.sh` requir
     		background #282A36
         }
     }
+
+# Usage : 
+
+- Add crypto to list        `./i3coins.sh -a`
+
+- Remove crypto to list     `./i3coins.sh -r`

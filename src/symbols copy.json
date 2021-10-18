@@ -1,0 +1,246 @@
+[
+    {
+        "name": "btc",
+        "symbol": ""
+    },
+    {
+        "name": "eth",
+        "symbol": ""
+    },
+    {
+        "name": "ltc",
+        "symbol": ""
+    },
+    {
+        "name": "bch",
+        "symbol": ""
+    },
+    {
+        "name": "bnb",
+        "symbol": ""
+    },
+    {
+        "name": "eos",
+        "symbol": ""
+    },
+    {
+        "name": "xrp",
+        "symbol": ""
+    },
+    {
+        "name": "xlm",
+        "symbol": ""
+    },
+    {
+        "name": "link",
+        "symbol": ""
+    },
+    {
+        "name": "dot",
+        "symbol": ""
+    },
+    {
+        "name": "yfi",
+        "symbol": ""
+    },
+    {
+        "name": "usd",
+        "symbol": ""
+    },
+    {
+        "name": "aed",
+        "symbol": ""
+    },
+    {
+        "name": "ars",
+        "symbol": ""
+    },
+    {
+        "name": "aud",
+        "symbol": ""
+    },
+    {
+        "name": "bdt",
+        "symbol": ""
+    },
+    {
+        "name": "bhd",
+        "symbol": ""
+    },
+    {
+        "name": "bmd",
+        "symbol": ""
+    },
+    {
+        "name": "brl",
+        "symbol": ""
+    },
+    {
+        "name": "cad",
+        "symbol": ""
+    },
+    {
+        "name": "chf",
+        "symbol": ""
+    },
+    {
+        "name": "clp",
+        "symbol": ""
+    },
+    {
+        "name": "cny",
+        "symbol": ""
+    },
+    {
+        "name": "czk",
+        "symbol": ""
+    },
+    {
+        "name": "dkk",
+        "symbol": ""
+    },
+    {
+        "name": "eur",
+        "symbol": "€"
+    },
+    {
+        "name": "gbp",
+        "symbol": ""
+    },
+    {
+        "name": "hkd",
+        "symbol": ""
+    },
+    {
+        "name": "huf",
+        "symbol": ""
+    },
+    {
+        "name": "idr",
+        "symbol": ""
+    },
+    {
+        "name": "ils",
+        "symbol": ""
+    },
+    {
+        "name": "inr",
+        "symbol": ""
+    },
+    {
+        "name": "jpy",
+        "symbol": ""
+    },
+    {
+        "name": "krw",
+        "symbol": ""
+    },
+    {
+        "name": "kwd",
+        "symbol": ""
+    },
+    {
+        "name": "lkr",
+        "symbol": ""
+    },
+    {
+        "name": "mmk",
+        "symbol": ""
+    },
+    {
+        "name": "mxn",
+        "symbol": ""
+    },
+    {
+        "name": "myr",
+        "symbol": ""
+    },
+    {
+        "name": "ngn",
+        "symbol": ""
+    },
+    {
+        "name": "nok",
+        "symbol": ""
+    },
+    {
+        "name": "nzd",
+        "symbol": ""
+    },
+    {
+        "name": "php",
+        "symbol": ""
+    },
+    {
+        "name": "pkr",
+        "symbol": ""
+    },
+    {
+        "name": "pln",
+        "symbol": ""
+    },
+    {
+        "name": "rub",
+        "symbol": ""
+    },
+    {
+        "name": "sar",
+        "symbol": ""
+    },
+    {
+        "name": "sek",
+        "symbol": ""
+    },
+    {
+        "name": "sgd",
+        "symbol": ""
+    },
+    {
+        "name": "thb",
+        "symbol": ""
+    },
+    {
+        "name": "try",
+        "symbol": ""
+    },
+    {
+        "name": "twd",
+        "symbol": ""
+    },
+    {
+        "name": "uah",
+        "symbol": ""
+    },
+    {
+        "name": "vef",
+        "symbol": ""
+    },
+    {
+        "name": "vnd",
+        "symbol": ""
+    },
+    {
+        "name": "zar",
+        "symbol": ""
+    },
+    {
+        "name": "xdr",
+        "symbol": ""
+    },
+    {
+        "name": "xag",
+        "symbol": ""
+    },
+    {
+        "name": "xau",
+        "symbol": ""
+    },
+    {
+        "name": "bits",
+        "symbol": ""
+    },
+    {
+        "name": "sats",
+        "symbol": ""
+    }
+]

@@ -33,3 +33,5 @@ Then add the following code to your `.i3/config`, the script `i3coins.sh` requir
 - Add crypto to list        `./i3coins.sh -a`
 
 - Remove crypto to list     `./i3coins.sh -r`
+
+- Add symbol to currency    `./i3coins.sh -s`
